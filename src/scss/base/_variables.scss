@@ -1,0 +1,49 @@
+// Typography
+$base-font-family: 'Crimson Text', serif;
+$heading-font-family: 'Brandon Grotesque', $font-stack-system;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 2px;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Brand Colors
+$color-brand-orange: #f88601;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $color-brand-orange;
+
+// Font Weights - Crimson
+$fw-crimson-regular: 400;
+$fw-crimson-semi: 600;
+$fw-crimson-bold: 700;
+
+// Font Weights - Brandon
+$fw-brandon-thin: 100;
+$fw-brandon-light: 300;
+$fw-brandon-regular: 400;
+$fw-brandon-medium: 500;
+$fw-brandon-bold: 700;
+$fw-brandon-black: 900;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: #fff;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

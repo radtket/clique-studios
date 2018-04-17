@@ -1,0 +1,149 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Light.eot");
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Light.woff2") format("woff2"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Light.woff") format("woff"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Light.ttf") format("truetype"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Light.svg#BrandonGrotesque-Light") format("svg"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Light.eot?#iefix") format("embedded-opentype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Thin.eot");
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Thin.woff2") format("woff2"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Thin.woff") format("woff"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Thin.ttf") format("truetype"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Thin.svg#BrandonGrotesque-Thin") format("svg"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Thin.eot?#iefix") format("embedded-opentype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Regular.eot");
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Regular.woff2") format("woff2"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Regular.woff") format("woff"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Regular.ttf") format("truetype"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Regular.svg#BrandonGrotesque-Regular") format("svg"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Regular.eot?#iefix") format("embedded-opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Medium.eot");
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Medium.woff2") format("woff2"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Medium.woff") format("woff"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Medium.ttf") format("truetype"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Medium.svg#BrandonGrotesque-Medium") format("svg"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Medium.eot?#iefix") format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Bold.eot");
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Bold.woff2") format("woff2"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Bold.woff") format("woff"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Bold.ttf") format("truetype"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Bold.svg#BrandonGrotesque-Bold") format("svg"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Bold.eot?#iefix") format("embedded-opentype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Black.eot");
+  src: url("../fonts/Brandon-Grotesque/BrandonGrotesque-Black.woff2") format("woff2"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Black.woff") format("woff"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Black.ttf") format("truetype"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Black.svg#BrandonGrotesque-Black") format("svg"), url("../fonts/Brandon-Grotesque/BrandonGrotesque-Black.eot?#iefix") format("embedded-opentype");
+  font-weight: 900;
+  font-style: normal; }
+
+button, [type='button'], [type='reset'], [type='submit'] {
+  appearance: none;
+  background-color: #f88601;
+  border: 0;
+  border-radius: 2px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  button:hover, [type='button']:hover, [type='reset']:hover, [type='submit']:hover {
+    background-color: #c66b01;
+    color: #000; }
+  button:disabled, [type='button']:disabled, [type='reset']:disabled, [type='submit']:disabled {
+    cursor: not-allowed;
+    opacity: .5; }
+    button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover {
+      background-color: #f88601; }
+
+html {
+  background-color: #fff;
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  margin: 0; }
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+dl {
+  margin: 0; }
+
+dt {
+  font-weight: 600;
+  margin: 0; }
+
+dd {
+  margin: 0; }
+
+figure {
+  margin: 0; }
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+html {
+  color: #333;
+  font-family: "Crimson Text", serif;
+  font-size: 100%;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+a {
+  color: #f88601;
+  text-decoration-skip: ink;
+  transition: color 150ms ease; }
+  a:hover {
+    color: #ba6501; }
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0; }
