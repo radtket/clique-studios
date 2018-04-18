@@ -58,7 +58,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
   font-size: 16px;
   font-weight: 600;
   line-height: 1;
-  padding: 0.75em 1.5em;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   transition: background-color 150ms ease;
@@ -73,6 +73,32 @@ button, [type='button'], [type='reset'], [type='submit'] {
     opacity: .5; }
     button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover {
       background-color: #f88601; }
+
+.btn {
+  background-color: transparent;
+  border-radius: 2px;
+  border: 2px solid #fff;
+  color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-weight: 700;
+  height: 60px;
+  letter-spacing: 4px;
+  margin: 0;
+  min-width: 230px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-property: background-color,border-color,color;
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  font-size: 16px;
+  line-height: 58px;
+  transition-timing-function: ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
 
 html {
   background-color: #fff;
@@ -129,10 +155,10 @@ h6 {
   font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   font-size: 1.25em;
   line-height: 1.2;
-  margin: 0 0 0.75em; }
+  margin: 0 0 10px; }
 
 p {
-  margin: 0 0 0.75em; }
+  margin: 0 0 10px; }
 
 a {
   color: #f88601;
@@ -146,4 +172,49 @@ hr {
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: 1.5em 0; }
+  margin: 20px 0; }
+
+.banner {
+  height: 100vh;
+  min-height: 580px;
+  display: flex;
+  overflow: hidden;
+  background-color: #231f20;
+  position: relative;
+  z-index: 3; }
+
+.work-wrap {
+  background-color: red;
+  width: 100%; }
+
+.client-lhh {
+  background-image: url("../assets/clients/lhh/LHH-BG.jpg");
+  position: relative; }
+  .client-lhh:after {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    background: rgba(6, 43, 111, 0.9); }
+
+.work-item {
+  padding-right: 150px;
+  padding-left: 150px;
+  display: flex;
+  color: #fff; }
+  .work-item__copy, .work-item__figure {
+    width: 50%;
+    position: relative;
+    z-index: 1; }
+  .work-item__logo {
+    margin-bottom: 40px; }
+  .work-item__headline {
+    font-size: 60px;
+    letter-spacing: 6px;
+    text-transform: uppercase; }
+  .work-item__desc {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 24px; }

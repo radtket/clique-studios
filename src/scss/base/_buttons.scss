@@ -36,3 +36,32 @@ $_button-background-color-hover: shade($action-color, 20%);
 		}
 	}
 }
+
+
+
+.btn {
+	background-color: transparent;
+	border-radius: $base-border-radius;
+	border: 2px solid #fff;
+	color: transparent;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $heading-font-family;
+	font-weight: $fw-brandon-bold;
+	height: $base-spacing * 3;
+	letter-spacing: 4px;
+	margin: 0;
+	min-width: 230px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition-property: background-color,border-color,color;
+	-webkit-font-smoothing: antialiased;
+	appearance: none;
+	font-size: 16px;
+	line-height: 58px;
+	transition-timing-function: ease;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}

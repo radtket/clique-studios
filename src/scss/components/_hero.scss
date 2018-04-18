@@ -1,0 +1,56 @@
+.banner {
+	height: 100vh;
+	min-height: 580px;
+	display: flex;
+	overflow: hidden;
+	background-color: #231f20;
+	position: relative;
+	z-index: 3;
+}
+
+
+
+.work-wrap {
+	background-color: red;
+	width: 100%;
+}
+
+.client-lhh {
+	background-image: url('../assets/clients/lhh/LHH-BG.jpg');
+	position: relative;
+	&:after {
+		@include size(100%);
+		@include position(absolute, 0 null null 0);
+    content: " ";
+    background: rgba(#062b6f, .9);
+	}
+}
+
+
+.work-item {
+	@include padding(null 150px);
+	display: flex;
+	color: #fff;
+
+	&__copy,
+	&__figure {
+		width: 50%;
+		position: relative;
+    z-index: 1;
+	}
+
+	&__logo {
+		margin-bottom: $base-spacing * 2;
+	}
+
+	&__headline {
+		font-size: 60px;
+		letter-spacing: 6px;
+		text-transform: uppercase;
+	}
+
+	&__desc {
+		@include margin(($base-spacing * 2) null);
+		font-size: 24px;
+	}
+}
