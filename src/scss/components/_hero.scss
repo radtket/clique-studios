@@ -1,56 +1,88 @@
-.banner {
-	height: 100vh;
-	min-height: 580px;
-	display: flex;
-	overflow: hidden;
-	background-color: #231f20;
-	position: relative;
-	z-index: 3;
-}
 
+.main-hero {
+  background-image: url('../assets/hero-bg.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 100vh;
+  position: relative;
 
-
-.work-wrap {
-	background-color: red;
-	width: 100%;
-}
-
-.client-lhh {
-	background-image: url('../assets/clients/lhh/LHH-BG.jpg');
-	position: relative;
-	&:after {
-		@include size(100%);
-		@include position(absolute, 0 null null 0);
-    content: " ";
-    background: rgba(#062b6f, .9);
-	}
-}
-
-
-.work-item {
-	@include padding(null 150px);
-	display: flex;
-	color: #fff;
-
-	&__copy,
-	&__figure {
-		width: 50%;
-		position: relative;
+  &__text {
+    position: relative;
     z-index: 1;
-	}
+  }
 
-	&__logo {
-		margin-bottom: $base-spacing * 2;
-	}
+  &::after {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    background-color: rgba(#282828, .3);
+    content: '';
+    z-index: 0;
+  }
 
-	&__headline {
-		font-size: 60px;
-		letter-spacing: 6px;
-		text-transform: uppercase;
-	}
+  h1 {
+    font-family: $base-font-family;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 90px;
+    margin-bottom: $base-spacing * 3;
 
-	&__desc {
-		@include margin(($base-spacing * 2) null);
-		font-size: 24px;
-	}
+    small {
+      @include padding(null 30px);
+      background: rgba(#fff, .25);
+      border-radius: 3px;
+      display: inline-block;
+      font-family: $heading-font-family;
+      font-size: 32px;
+      letter-spacing: .64px;
+      line-height: 60px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  .hero-cta {
+    color: #fff;
+    display: inline-block;
+    font-family: $heading-font-family;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: $heading-line-height;
+    padding-bottom: $base-spacing;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: $base-spacing * 2;
+
+    &::after {
+      @include position(absolute, null null 0 0);
+      @include size(100%, 2px);
+      background-color: #f4f4f4;
+      content: '';
+    }
+  }
+
+  .hero-scroll-down {
+    @include size(60px);
+    background-color: transparent;
+    border: 2px solid #fff;
+    display: block;
+    line-height: 60px;
+    text-align: center;
+
+    &:hover {
+      background: $color-brand-orange;
+
+      svg {
+        fill: #282828;
+      }
+    }
+
+    svg {
+      @include size(30px, 100%);
+      display: inline-block;
+      fill: #fff;
+    }
+  }
 }

@@ -99,6 +99,8 @@ button, [type='button'], [type='reset'], [type='submit'] {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
+  .btn-white {
+    color: #fff; }
 
 html {
   background-color: #fff;
@@ -115,6 +117,15 @@ body {
 
 body {
   margin: 0; }
+
+.container-small {
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto; }
+  .container-small::after {
+    clear: both;
+    content: "";
+    display: block; }
 
 ul,
 ol {
@@ -174,42 +185,126 @@ hr {
   border-top: 0;
   margin: 20px 0; }
 
-.banner {
+.main-hero {
+  background-image: url("../assets/hero-bg.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
   height: 100vh;
-  min-height: 580px;
-  display: flex;
-  overflow: hidden;
-  background-color: #231f20;
-  position: relative;
-  z-index: 3; }
+  position: relative; }
+  .main-hero__text {
+    position: relative;
+    z-index: 1; }
+  .main-hero::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(40, 40, 40, 0.3);
+    content: '';
+    z-index: 0; }
+  .main-hero h1 {
+    font-family: "Crimson Text", serif;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 90px;
+    margin-bottom: 60px; }
+    .main-hero h1 small {
+      padding-right: 30px;
+      padding-left: 30px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 3px;
+      display: inline-block;
+      font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+      font-size: 32px;
+      letter-spacing: .64px;
+      line-height: 60px;
+      text-transform: uppercase;
+      white-space: nowrap; }
+  .main-hero .hero-cta {
+    color: #fff;
+    display: inline-block;
+    font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    padding-bottom: 20px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 40px; }
+    .main-hero .hero-cta::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #f4f4f4;
+      content: ''; }
+  .main-hero .hero-scroll-down {
+    height: 60px;
+    width: 60px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    display: block;
+    line-height: 60px;
+    text-align: center; }
+    .main-hero .hero-scroll-down:hover {
+      background: #f88601; }
+      .main-hero .hero-scroll-down:hover svg {
+        fill: #282828; }
+    .main-hero .hero-scroll-down svg {
+      height: 100%;
+      width: 30px;
+      display: inline-block;
+      fill: #fff; }
 
 .work-wrap {
   background-color: red;
   width: 100%; }
 
-.client-lhh {
-  background-image: url("../assets/clients/lhh/LHH-BG.jpg");
-  position: relative; }
-  .client-lhh:after {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: " ";
-    background: rgba(6, 43, 111, 0.9); }
-
 .work-item {
   padding-right: 150px;
   padding-left: 150px;
-  display: flex;
-  color: #fff; }
-  .work-item__copy, .work-item__figure {
+  color: #fff;
+  display: flex; }
+  .work-item__copy {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 150px; }
+  .work-item__figure {
     position: relative;
-    z-index: 1; }
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding-right: 20px; }
+    .work-item__figure img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      align-self: flex-end;
+      max-height: 95%; }
   .work-item__logo {
+    height: 45px;
     margin-bottom: 40px; }
+    .work-item__logo img {
+      height: auto;
+      max-height: 45px; }
+    .work-item__logo svg {
+      height: 100%; }
   .work-item__headline {
     font-size: 60px;
     letter-spacing: 6px;
@@ -218,3 +313,74 @@ hr {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 24px; }
+
+main > section:nth-child(1):not(.site-menu),
+main .work-item__figure:nth-child(1):not(.site-menu) {
+  z-index: 2; }
+
+main > section:nth-child(2):not(.site-menu),
+main .work-item__figure:nth-child(2):not(.site-menu) {
+  z-index: 3; }
+
+main > section:nth-child(3):not(.site-menu),
+main .work-item__figure:nth-child(3):not(.site-menu) {
+  z-index: 4; }
+
+.mast {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  width: 100%; }
+  .mast::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    content: '';
+    z-index: 0; }
+  .mast.mast-lhh::after {
+    background: rgba(6, 43, 111, 0.9); }
+  .mast.mast__kendall-college::after {
+    background: rgba(194, 1, 48, 0.5); }
+  .mast.mast__first-bank::after {
+    background: rgba(0, 153, 213, 0.3); }
+  .mast__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 0; }
+  .mast__header {
+    height: 100%;
+    width: 100%;
+    position: relative; }
+
+.blockquote-sec {
+  padding-top: 155px;
+  padding-bottom: 135px;
+  background-attachment: fixed;
+  background-image: url("../assets/blockquote-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+blockquote {
+  border-left: 2px solid #f88601;
+  color: #282828;
+  font-family: "Crimson Text", serif;
+  font-size: 48px;
+  line-height: 58px;
+  margin: 0 auto;
+  padding-left: 40px; }
+  blockquote small {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5; }
