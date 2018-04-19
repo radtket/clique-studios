@@ -1,24 +1,22 @@
 .blockquote-sec {
-  @include padding(155px null 135px);
-  background-attachment: fixed;
-  background-image: url('../assets/blockquote-bg.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	@include padding(155px null 135px);
+	background-image: url('../assets/blockquote-bg.jpg');
+	background-position: unset;
+	z-index: 49;
 }
 
 blockquote {
-  border-left: 2px solid $color-brand-orange;
-  color: #282828;
-  font-family: $base-font-family;
-  font-size: 48px;
-  line-height: 58px;
-  margin: 0 auto;
-  padding-left: $base-spacing * 2;
+	border-left: 2px solid $color-brand-orange;
+	color: #282828;
+	font-family: $base-font-family;
+	font-size: 48px;
+	line-height: 58px;
+	margin: 0 auto;
+	padding-left: $base-spacing * 2;
 
-  small {
-    display: block;
-    font-size: 24px;
-    line-height: $base-line-height;
-  }
+	small {
+		display: block;
+		font-size: 24px;
+		line-height: $base-line-height;
+	}
 }

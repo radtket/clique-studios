@@ -38,7 +38,22 @@ body {
 	margin: 0;
 }
 
-
 .container-small {
 	@include outer-container(1060px);
+}
+
+.small-section {
+	background-attachment: scroll;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	@media only screen and (min-width: 1024px) {
+		background-attachment: fixed;
+	}
 }

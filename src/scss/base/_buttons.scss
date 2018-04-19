@@ -1,7 +1,6 @@
 $_button-background-color: $action-color;
 $_button-background-color-hover: shade($action-color, 20%);
 
-
 #{$all-buttons} {
 	appearance: none;
 	background-color: $_button-background-color;
@@ -37,10 +36,8 @@ $_button-background-color-hover: shade($action-color, 20%);
 	}
 }
 
-
-
 .btn {
-	background-color: transparent;
+	background: none;
 	border-radius: $base-border-radius;
 	border: 2px solid #fff;
 	color: transparent;
@@ -55,7 +52,7 @@ $_button-background-color-hover: shade($action-color, 20%);
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-	transition-property: background-color,border-color,color;
+	transition: all 0.3s;
 	-webkit-font-smoothing: antialiased;
 	appearance: none;
 	font-size: 16px;
@@ -64,8 +61,40 @@ $_button-background-color-hover: shade($action-color, 20%);
 	user-select: none;
 	vertical-align: middle;
 	white-space: nowrap;
+	position: relative;
+
+	&::after {
+		transition: all 0.3s;
+	}
+
+	&::before,
+	&::after {
+		background: #fff;
+		content: '';
+		position: absolute;
+		z-index: -1;
+	}
+
+	&:hover {
+		color: $color-brand-orange;
+
+		&::after {
+			height: 100%;
+		}
+	}
 
 	&-white {
 		color: #fff;
+
+		&::after {
+			height: 0;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+
+		&:hover {
+			color: $color-brand-orange;
+		}
 	}
 }

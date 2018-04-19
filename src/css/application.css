@@ -75,7 +75,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
       background-color: #f88601; }
 
 .btn {
-  background-color: transparent;
+  background: none;
   border-radius: 2px;
   border: 2px solid #fff;
   color: transparent;
@@ -90,7 +90,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition-property: background-color,border-color,color;
+  transition: all 0.3s;
   -webkit-font-smoothing: antialiased;
   appearance: none;
   font-size: 16px;
@@ -98,9 +98,28 @@ button, [type='button'], [type='reset'], [type='submit'] {
   transition-timing-function: ease;
   user-select: none;
   vertical-align: middle;
-  white-space: nowrap; }
+  white-space: nowrap;
+  position: relative; }
+  .btn::after {
+    transition: all 0.3s; }
+  .btn::before, .btn::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1; }
+  .btn:hover {
+    color: #f88601; }
+    .btn:hover::after {
+      height: 100%; }
   .btn-white {
     color: #fff; }
+    .btn-white::after {
+      height: 0;
+      left: 0;
+      top: 0;
+      width: 100%; }
+    .btn-white:hover {
+      color: #f88601; }
 
 html {
   background-color: #fff;
@@ -126,6 +145,20 @@ body {
     clear: both;
     content: "";
     display: block; }
+
+.small-section {
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+  @media only screen and (min-width: 1024px) {
+    .small-section {
+      background-attachment: fixed; } }
 
 ul,
 ol {
@@ -186,25 +219,38 @@ hr {
   margin: 20px 0; }
 
 .main-hero {
+  height: 100vh;
+  width: 100%;
+  background-attachment: scroll;
   background-image: url("../assets/hero-bg.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  height: 100vh;
-  position: relative; }
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 50; }
+  @media only screen and (min-width: 1024px) {
+    .main-hero {
+      background-attachment: fixed; } }
+  .main-hero__content {
+    height: 100%;
+    width: 100%;
+    display: table;
+    position: relative; }
   .main-hero__text {
-    position: relative;
-    z-index: 1; }
-  .main-hero::after {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle; }
+  .main-hero::before {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(40, 40, 40, 0.3);
-    content: '';
-    z-index: 0; }
+    background-color: rgba(40, 40, 40, 0.77);
+    content: ''; }
   .main-hero h1 {
     font-family: "Crimson Text", serif;
     font-size: 60px;
@@ -230,11 +276,11 @@ hr {
     font-size: 24px;
     letter-spacing: 1px;
     line-height: 1.2;
+    margin-bottom: 40px;
     padding-bottom: 20px;
     position: relative;
     text-decoration: none;
-    text-transform: uppercase;
-    margin-bottom: 40px; }
+    text-transform: uppercase; }
     .main-hero .hero-cta::after {
       position: absolute;
       bottom: 0;
@@ -247,19 +293,96 @@ hr {
     height: 60px;
     width: 60px;
     background-color: transparent;
-    border: 2px solid #fff;
     display: block;
     line-height: 60px;
-    text-align: center; }
-    .main-hero .hero-scroll-down:hover {
-      background: #f88601; }
-      .main-hero .hero-scroll-down:hover svg {
+    text-align: center;
+    position: relative; }
+    .main-hero .hero-scroll-down:after {
+      transition: 0.3s all ease;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 3px;
+      border: 2px solid #fff; }
+    .main-hero .hero-scroll-down:hover svg {
+      fill: #282828; }
+    .main-hero .hero-scroll-down:hover:after {
+      transform: rotate(45deg);
+      background: #f88601;
+      border-color: #f88601; }
+    .main-hero .hero-scroll-down:active {
+      transform: scale(1.1); }
+      .main-hero .hero-scroll-down:active svg {
         fill: #282828; }
+      .main-hero .hero-scroll-down:active:before {
+        background-color: #f88601; }
+      .main-hero .hero-scroll-down:active:after {
+        border-color: #f88601; }
     .main-hero .hero-scroll-down svg {
       height: 100%;
       width: 30px;
       display: inline-block;
-      fill: #fff; }
+      fill: #fff;
+      position: relative;
+      z-index: 1; }
+
+/* Scroll down icon */
+@keyframes scroll-down-anim {
+  0% {
+    bottom: 2px; }
+  50% {
+    bottom: 7px; }
+  100% {
+    bottom: 2px; } }
+
+.scroll-down {
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  text-align: center;
+  text-decoration: none;
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .scroll-down:before {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 -10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background: #fff;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1; }
+  .scroll-down:hover:before {
+    opacity: .6; }
+
+.scroll-down-icon {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  color: #111;
+  font-size: 15px;
+  animation: scroll-down-anim 1s infinite;
+  z-index: 2; }
+
+/* ==============================
+	 IOS Background Fix
+	 ============================== */
+.mobile .main-hero {
+  background-attachment: scroll; }
 
 .work-wrap {
   background-color: red;
@@ -326,6 +449,10 @@ main > section:nth-child(3):not(.site-menu),
 main .work-item__figure:nth-child(3):not(.site-menu) {
   z-index: 4; }
 
+main > section:nth-child(4):not(.site-menu),
+main .work-item__figure:nth-child(4):not(.site-menu) {
+  z-index: 5; }
+
 .mast {
   align-items: center;
   color: #fff;
@@ -366,11 +493,9 @@ main .work-item__figure:nth-child(3):not(.site-menu) {
 .blockquote-sec {
   padding-top: 155px;
   padding-bottom: 135px;
-  background-attachment: fixed;
   background-image: url("../assets/blockquote-bg.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-position: unset;
+  z-index: 49; }
 
 blockquote {
   border-left: 2px solid #f88601;
