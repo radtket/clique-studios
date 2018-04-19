@@ -1,0 +1,73 @@
+.client-square-grid {
+	padding: 110px 0;
+	z-index: 999;
+	background: yellow;
+}
+
+// Client Square
+.client-square {
+	@include span-columns(3);
+	@include omega(4n);
+	margin-bottom: 2.35765%; // base-gutter
+	position: relative;
+	overflow: hidden;
+	&:hover {
+		.client-square__bg {
+			filter: grayscale(0);
+			filter: saturate(1.5);
+			transform: scale(1.1);
+		}
+		.client-square__nav {
+			opacity: 1;
+			transform: translateY(-50px);
+			z-index: 3;
+		}
+	}
+	&__bg {
+		@include size(100%);
+		filter: grayscale(100%);
+		filter: saturate(0);
+		max-width: 100%;
+		transform: scale(1.2);
+		transition: all .3s ease-in-out;
+	}
+
+	&__inner {
+		@include size(100%);
+		@include position(absolute, 0);
+		display: flex;
+    align-items: center;
+		justify-content: center;
+
+		svg {
+			max-height: 100px;
+			height: 100%;
+			width: 80%;
+			max-width: 100%;
+			fill: #fff !important;
+		}
+	}
+
+	&__nav {
+		@include position(absolute, null 0 -50px null);
+		transition: all .27s cubic-bezier(.300, .100, .580, 1.000);
+		&--item {
+			@include size(50px);
+			background: rgba(#000, .5);
+			display: inline-block;
+			line-height: 50px;
+			text-align: center;
+			transition: all .27s cubic-bezier(.300, .100, .580, 1.000);
+			&:hover {
+				background: rgba(#000, .75);
+				svg {
+					fill: $color-brand-orange;
+				}
+			}
+			svg {
+				fill: #fff;
+				vertical-align: middle;
+			}
+		}
+	}
+}

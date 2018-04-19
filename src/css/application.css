@@ -453,6 +453,10 @@ main > section:nth-child(4):not(.site-menu),
 main .work-item__figure:nth-child(4):not(.site-menu) {
   z-index: 5; }
 
+main > section:nth-child(5):not(.site-menu),
+main .work-item__figure:nth-child(5):not(.site-menu) {
+  z-index: 6; }
+
 .mast {
   align-items: center;
   color: #fff;
@@ -509,3 +513,76 @@ blockquote {
     display: block;
     font-size: 24px;
     line-height: 1.5; }
+
+.client-square-grid {
+  padding: 110px 0;
+  z-index: 999;
+  background: yellow; }
+
+.client-square {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  margin-bottom: 2.35765%;
+  position: relative;
+  overflow: hidden; }
+  .client-square:last-child {
+    margin-right: 0; }
+  .client-square:nth-child(4n) {
+    margin-right: 0; }
+  .client-square:nth-child(4n+1) {
+    clear: left; }
+  .client-square:hover .client-square__bg {
+    filter: grayscale(0);
+    filter: saturate(1.5);
+    transform: scale(1.1); }
+  .client-square:hover .client-square__nav {
+    opacity: 1;
+    transform: translateY(-50px);
+    z-index: 3; }
+  .client-square__bg {
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    filter: saturate(0);
+    max-width: 100%;
+    transform: scale(1.2);
+    transition: all .3s ease-in-out; }
+  .client-square__inner {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .client-square__inner svg {
+      max-height: 100px;
+      height: 100%;
+      width: 80%;
+      max-width: 100%;
+      fill: #fff !important; }
+  .client-square__nav {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1); }
+    .client-square__nav--item {
+      height: 50px;
+      width: 50px;
+      background: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      line-height: 50px;
+      text-align: center;
+      transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1); }
+      .client-square__nav--item:hover {
+        background: rgba(0, 0, 0, 0.75); }
+        .client-square__nav--item:hover svg {
+          fill: #f88601; }
+      .client-square__nav--item svg {
+        fill: #fff;
+        vertical-align: middle; }
