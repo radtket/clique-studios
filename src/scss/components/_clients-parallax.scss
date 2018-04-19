@@ -1,62 +1,63 @@
 .work-wrap {
-	background-color: red;
-	width: 100%;
+  background-color: red;
+  width: 100%;
 }
 
 .work-item {
-	@include padding(null 150px);
-	color: #fff;
-	display: flex;
+  @include padding(null 150px);
+  color: #fff;
+  display: flex;
 
-	&__copy {
-		@include position(fixed, 0);
-		width: 50%;
-		z-index: 5;
-		display: flex;
-		align-items: left;
-		flex-direction: column;
-		justify-content: center;
-		padding-left: 150px;
-	}
+  &__copy {
+    @include position(fixed, 0);
+    width: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 150px;
+  }
 
-	&__figure {
-		@include position(relative, null null null 50%);
-		@include size(50%, 100%);
-		display: flex;
-		justify-content: center;
-		padding-right: 20px;
+  &__figure {
+    @include position(relative, null null null 50%);
+    @include size(50%, 100%);
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
 
-		img {
-			@include position(absolute, null null 0 0);
-			align-self: flex-end;
-			max-height: 95%;
-		}
-	}
+    img {
+      @include position(absolute, null null 0 0);
+      align-self: flex-end;
+      max-height: 95%;
+    }
+  }
 
-	&__logo {
-		height: 45px;
-		margin-bottom: $base-spacing * 2;
+  &__logo {
+    height: 45px;
+    margin-bottom: $base-spacing * 2;
 
-		img {
-			height: auto;
-			max-height: 45px;
-		}
+    img {
+      height: auto;
+      max-height: 45px;
+    }
 
-		svg {
+    svg {
 			height: 100%;
-		}
-	}
+			max-width: 250px;
+    }
+  }
 
-	&__headline {
-		font-size: 60px;
-		letter-spacing: 6px;
-		text-transform: uppercase;
-	}
+  &__headline {
+    font-size: 60px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
 
-	&__desc {
-		@include margin(($base-spacing * 2) null);
-		font-size: 24px;
-	}
+  &__desc {
+    @include margin(($base-spacing * 2) null);
+    font-size: 24px;
+  }
 }
 
 
@@ -65,11 +66,11 @@
 //  @description: Creates increasing z-index layers, needed for clip rect effect
 //----------------------------------------------
 @mixin z-index-layers($layers: 7) {
-	@for $i from 1 through $layers {
-		&:nth-child(#{$i}):not(.site-menu) {
-			z-index: 1 + $i;
-		}
-	}
+  @for $i from 1 through $layers {
+    &:nth-child(#{$i}):not(.site-menu) {
+      z-index: 1 + $i;
+    }
+  }
 }
 
 
@@ -80,58 +81,89 @@
 // main > article,
 main > section,
 main .work-item__figure {
-	@include z-index-layers(8);
+  @include z-index-layers(9);
 }
 
 //----------------------------------------------
-//  masts
+//  case-studys
 //----------------------------------------------
 
-.mast {
-	align-items: center;
-	color: #fff;
-	display: flex;
-	height: 100vh;
-	position: relative;
-	width: 100%;
+.case-study {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  width: 100%;
 
-	&::after {
-		@include position(absolute, 0 null null 0);
-		@include size(100%);
-		background: transparent;
-		content: '';
-		z-index: 0;
-	}
+  &::after {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    background: transparent;
+    background-repeat: no-repeat;
+    content: '';
+    z-index: 0;
+  }
 
-	&.mast-lhh::after {
-		background: rgba(#062b6f, .9);
-	}
+  &.case-study-lhh::after {
+    background: rgba(#062b6f, .9);
+  }
 
-	&.mast__kendall-college::after {
-		background: rgba(#c20130, .5);
-	}
+  &.case-study__kendall-college::after {
+    background: rgba(#c20130, .5);
+  }
 
-	&.mast__first-bank::after {
-		background: rgba(#0099d5, .3);
-	}
+  &.case-study__first-bank::after {
+    background: rgba(#0099d5, .3);
+  }
 
-	&__bg {
-		@include position(absolute, 0 null null 0);
-		@include size(100%);
-		background-color: #111;
-		background-size: cover;
-		margin: 0 auto;
-		padding: 0;
-	}
+  &.case-study__melting-pot::after {
+    background: rgba(#1b1d20, .70);
+  }
 
-	&__header {
-		@include size(100%);
-		position: relative;
-		// @include padding(null 20px null 150px);
-		// @include position(fixed, 0);
-		// align-items: center;
-		// display: flex;
-		// z-index: 5;
-	}
+  &.case-study__soc::after {
+    background: rgba(#ee3642, .70);
+  }
+
+  &.case-study__lori-greiner {
+    background: #1d1d1d;
+
+    &::after {
+      background: rgba(#1d1d1d, .70);
+    }
+
+    .case-study__bg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.case-study__retrofit::after {
+    background: rgba(#0179ae, .10);
+  }
+
+  &.case-study__denali::after {
+    background: rgba(#22313f, .70);
+  }
+
+  &__bg {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    background-color: #111;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &__header {
+    @include size(100%);
+    position: relative;
+    // @include padding(null 20px null 150px);
+    // @include position(fixed, 0);
+    // align-items: center;
+    // display: flex;
+    // z-index: 5;
+  }
 }
 

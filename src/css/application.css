@@ -462,7 +462,8 @@ hr {
       height: auto;
       max-height: 45px; }
     .work-item__logo svg {
-      height: 100%; }
+      height: 100%;
+      max-width: 250px; }
   .work-item__headline {
     font-size: 60px;
     letter-spacing: 6px;
@@ -504,29 +505,50 @@ main > section:nth-child(8):not(.site-menu),
 main .work-item__figure:nth-child(8):not(.site-menu) {
   z-index: 9; }
 
-.mast {
+main > section:nth-child(9):not(.site-menu),
+main .work-item__figure:nth-child(9):not(.site-menu) {
+  z-index: 10; }
+
+.case-study {
   align-items: center;
   color: #fff;
   display: flex;
   height: 100vh;
   position: relative;
   width: 100%; }
-  .mast::after {
+  .case-study::after {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background: transparent;
+    background-repeat: no-repeat;
     content: '';
     z-index: 0; }
-  .mast.mast-lhh::after {
+  .case-study.case-study-lhh::after {
     background: rgba(6, 43, 111, 0.9); }
-  .mast.mast__kendall-college::after {
+  .case-study.case-study__kendall-college::after {
     background: rgba(194, 1, 48, 0.5); }
-  .mast.mast__first-bank::after {
+  .case-study.case-study__first-bank::after {
     background: rgba(0, 153, 213, 0.3); }
-  .mast__bg {
+  .case-study.case-study__melting-pot::after {
+    background: rgba(27, 29, 32, 0.7); }
+  .case-study.case-study__soc::after {
+    background: rgba(238, 54, 66, 0.7); }
+  .case-study.case-study__lori-greiner {
+    background: #1d1d1d; }
+    .case-study.case-study__lori-greiner::after {
+      background: rgba(29, 29, 29, 0.7); }
+    .case-study.case-study__lori-greiner .case-study__bg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain; }
+  .case-study.case-study__retrofit::after {
+    background: rgba(1, 121, 174, 0.1); }
+  .case-study.case-study__denali::after {
+    background: rgba(34, 49, 63, 0.7); }
+  .case-study__bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -536,7 +558,7 @@ main .work-item__figure:nth-child(8):not(.site-menu) {
     background-size: cover;
     margin: 0 auto;
     padding: 0; }
-  .mast__header {
+  .case-study__header {
     height: 100%;
     width: 100%;
     position: relative; }
