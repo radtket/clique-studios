@@ -10,7 +10,7 @@ blockquote {
 	color: #282828;
 	font-family: $base-font-family;
 	font-size: 48px;
-	line-height: 58px;
+	line-height: $heading-line-height;
 	margin: 0 auto;
 	padding-left: $base-spacing * 2;
 

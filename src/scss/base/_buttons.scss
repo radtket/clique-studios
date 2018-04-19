@@ -39,7 +39,7 @@ $_button-background-color-hover: shade($action-color, 20%);
 .btn {
 	background: none;
 	border-radius: $base-border-radius;
-	border: 2px solid #fff;
+	border: 2px solid transparent;
 	color: transparent;
 	cursor: pointer;
 	display: inline-block;
@@ -69,6 +69,8 @@ $_button-background-color-hover: shade($action-color, 20%);
 
 	&::before,
 	&::after {
+		@include position(absolute, 0 null null 0);
+		@include size(100%, 0);
 		background: #fff;
 		content: '';
 		position: absolute;
@@ -85,16 +87,36 @@ $_button-background-color-hover: shade($action-color, 20%);
 
 	&-white {
 		color: #fff;
+		border-color: #fff;
 
 		&::after {
-			height: 0;
-			left: 0;
-			top: 0;
-			width: 100%;
+			background-color: #fff;
 		}
 
 		&:hover {
 			color: $color-brand-orange;
 		}
+	}
+
+	&-orange {
+		color: $color-brand-orange;
+		border-color: $color-brand-orange;
+
+		&::after {
+			background-color: $color-brand-orange;
+		}
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+
+// Button Group
+
+.btn-group {
+	.btn {
+		@include margin(null 15px 15px);
 	}
 }

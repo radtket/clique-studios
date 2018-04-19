@@ -38,6 +38,11 @@ body {
 	margin: 0;
 }
 
+.container {
+	@include outer-container(1200px);
+	@include padding(null $base-spacing);
+}
+
 .container-small {
 	@include outer-container(1060px);
 }

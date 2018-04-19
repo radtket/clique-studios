@@ -80,7 +80,7 @@
 // main > article,
 main > section,
 main .work-item__figure {
-	@include z-index-layers(5);
+	@include z-index-layers(8);
 }
 
 //----------------------------------------------
