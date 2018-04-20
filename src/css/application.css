@@ -54,9 +54,9 @@ button, [type='button'], [type='reset'], [type='submit'] {
   color: #000;
   cursor: pointer;
   display: inline-block;
-  font-family: "Crimson Text", serif;
+  font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   padding: 10px 20px;
   text-align: center;
@@ -110,8 +110,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
     width: 100%;
     background: #fff;
     content: '';
-    position: absolute;
-    z-index: -1; }
+    position: absolute; }
   .btn:hover {
     color: #f88601; }
     .btn:hover::after {
@@ -247,11 +246,46 @@ hr {
 .headline-lg {
   color: #323232;
   font-size: 48px;
-  font-weight: 400;
+  font-weight: "Crimson Text", serif;
   margin-bottom: 40px; }
 
 .text-center {
   text-align: center; }
+
+.site-header {
+  z-index: 999999999; }
+  .site-header figure {
+    z-index: 1; }
+
+.footer {
+  z-index: 100000; }
+
+.client-square-grid {
+  z-index: 999; }
+
+.main-hero {
+  z-index: 50; }
+
+.blockquote-sec {
+  z-index: 49; }
+
+.work-item__copy {
+  z-index: 5; }
+
+.client-square__nav {
+  z-index: 3; }
+
+.scroll-down-icon {
+  z-index: 2; }
+
+.hero-scroll-down svg {
+  z-index: 1; }
+
+.scroll-down:before {
+  z-index: 1; }
+
+.btn::before, .btn::after {
+  z-index: -1; }
 
 .main-hero {
   height: 100vh;
@@ -264,8 +298,7 @@ hr {
   color: #fff;
   display: block;
   overflow: hidden;
-  position: relative;
-  z-index: 50; }
+  position: relative; }
   @media only screen and (min-width: 1024px) {
     .main-hero {
       background-attachment: fixed; } }
@@ -289,7 +322,7 @@ hr {
   .main-hero h1 {
     font-family: "Crimson Text", serif;
     font-size: 60px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 90px;
     margin-bottom: 60px; }
     .main-hero h1 small {
@@ -361,8 +394,7 @@ hr {
       width: 30px;
       display: inline-block;
       fill: #fff;
-      position: relative;
-      z-index: 1; }
+      position: relative; }
 
 /* Scroll down icon */
 @keyframes scroll-down-anim {
@@ -395,8 +427,7 @@ hr {
     background: #fff;
     border-radius: 2px;
     transform: rotate(45deg);
-    transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 1; }
+    transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   .scroll-down:hover:before {
     opacity: .6; }
 
@@ -410,8 +441,7 @@ hr {
   bottom: 4px;
   color: #111;
   font-size: 15px;
-  animation: scroll-down-anim 1s infinite;
-  z-index: 2; }
+  animation: scroll-down-anim 1s infinite; }
 
 /* ==============================
 	 IOS Background Fix
@@ -435,7 +465,6 @@ hr {
     bottom: 0;
     left: 0;
     width: 50%;
-    z-index: 5;
     display: flex;
     align-items: left;
     flex-direction: column;
@@ -567,8 +596,7 @@ main .work-item__figure:nth-child(9):not(.site-menu) {
   padding-top: 155px;
   padding-bottom: 135px;
   background-image: url("../assets/blockquote-bg.jpg");
-  background-position: unset;
-  z-index: 49; }
+  background-position: unset; }
 
 blockquote {
   border-left: 2px solid #f88601;
@@ -585,7 +613,6 @@ blockquote {
 
 .client-square-grid {
   padding: 110px 0;
-  z-index: 999;
   background: #fff; }
 
 .client-square {
@@ -608,8 +635,7 @@ blockquote {
     transform: scale(1.1); }
   .client-square:hover .client-square__nav {
     opacity: 1;
-    transform: translateY(-50px);
-    z-index: 3; }
+    transform: translateY(-50px); }
   .client-square__bg {
     height: 100%;
     width: 100%;
@@ -630,9 +656,9 @@ blockquote {
     align-items: center;
     justify-content: center; }
     .client-square__inner svg {
-      max-height: 100px;
       height: 100%;
       width: 80%;
+      max-height: 100px;
       max-width: 100%;
       fill: #fff !important; }
   .client-square__nav {
@@ -659,7 +685,6 @@ blockquote {
 .footer {
   background-color: #fff;
   position: relative;
-  z-index: 100000;
   text-align: center;
   padding-top: 80px;
   padding-bottom: 80px; }
@@ -723,13 +748,14 @@ blockquote {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  position: fixed;
-  z-index: 999999999; }
+  position: fixed; }
   .site-header::after {
     clear: both;
     content: "";
     display: block; }
   .site-header:hover .site-header__nav {
+    transform: translate3d(0, 0, 0); }
+  .site-header__show .site-header__nav {
     transform: translate3d(0, 0, 0); }
   .site-header figure {
     height: 110px;
@@ -738,19 +764,19 @@ blockquote {
     display: inline-block;
     float: left;
     position: relative;
-    text-align: center;
-    z-index: 1; }
+    text-align: center; }
     .site-header figure svg {
       height: 100%;
       width: 70px; }
   .site-header__nav {
     float: left;
     line-height: 110px;
+    transform: translate3d(-100%, 0, 0);
     transition: 0.5s all cubic-bezier(0.165, 0.84, 0.44, 1); }
     .site-header__nav a {
       font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: #fff;
       letter-spacing: 1.3px;
       margin-left: 60px;

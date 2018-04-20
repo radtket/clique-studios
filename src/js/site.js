@@ -124,6 +124,16 @@ function init_scroll_spy() {
   });
 }
 
+// Navbar
+function init_nav_show() {
+  $(window).scroll(() => {
+    if ($(window).scrollTop() > 220) {
+      $('.site-header').removeClass('site-header__show');
+    } else {
+      $('.site-header').addClass('site-header__show');
+    }
+  });
+}
 /* ---------------------------------------------
      Scripts initialization
      --------------------------------------------- */
@@ -136,6 +146,7 @@ $(window).load(() => {
 $(document).ready(() => {
   init_scroll_navigate();
   init_scroll_spy();
+  init_nav_show();
   $(window).trigger('resize');
 });
 

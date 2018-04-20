@@ -9,9 +9,9 @@ $_button-background-color-hover: shade($action-color, 20%);
 	color: contrast-switch($_button-background-color);
 	cursor: pointer;
 	display: inline-block;
-	font-family: $base-font-family;
+	font-family: $heading-font-family;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: $fw-brandon-medium;
 	line-height: 1;
 	padding: $small-spacing $base-spacing;
 	text-align: center;
@@ -71,10 +71,9 @@ $_button-background-color-hover: shade($action-color, 20%);
 	&::after {
 		@include position(absolute, 0 null null 0);
 		@include size(100%, 0);
-		background: #fff;
+		background: $color-white;
 		content: '';
 		position: absolute;
-		z-index: -1;
 	}
 
 	&:hover {
@@ -86,11 +85,11 @@ $_button-background-color-hover: shade($action-color, 20%);
 	}
 
 	&-white {
-		color: #fff;
-		border-color: #fff;
+		color: $color-white;
+		border-color: $color-white;
 
 		&::after {
-			background-color: #fff;
+			background-color: $color-white;
 		}
 
 		&:hover {
@@ -107,7 +106,7 @@ $_button-background-color-hover: shade($action-color, 20%);
 		}
 
 		&:hover {
-			color: #fff;
+			color: $color-white;
 		}
 	}
 }

@@ -5,13 +5,12 @@
 
 .work-item {
   @include padding(null 150px);
-  color: #fff;
+  color: $color-white;
   display: flex;
 
   &__copy {
     @include position(fixed, 0);
     width: 50%;
-    z-index: 5;
     display: flex;
     align-items: left;
     flex-direction: column;
@@ -90,7 +89,7 @@ main .work-item__figure {
 
 .case-study {
   align-items: center;
-  color: #fff;
+  color: $color-white;
   display: flex;
   height: 100vh;
   position: relative;

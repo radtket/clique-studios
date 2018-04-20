@@ -1,7 +1,6 @@
 .footer {
-  background-color: #fff;
+  background-color: $color-white;
   position: relative;
-  z-index: 100000;
   text-align: center;
   @include padding(($base-spacing * 4) null);
 }

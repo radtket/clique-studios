@@ -2,11 +2,10 @@
 	@include padding(155px null 135px);
 	background-image: url('../assets/blockquote-bg.jpg');
 	background-position: unset;
-	z-index: 49;
 }
 
 blockquote {
-	border-left: 2px solid $color-brand-orange;
+	border-left: $base-border-size solid $color-brand-orange;
 	color: #282828;
 	font-family: $base-font-family;
 	font-size: 48px;
