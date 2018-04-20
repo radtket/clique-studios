@@ -147,6 +147,7 @@ $(document).ready(() => {
   init_scroll_navigate();
   init_scroll_spy();
   init_nav_show();
+  new WOW().init();
   $(window).trigger('resize');
 });
 
