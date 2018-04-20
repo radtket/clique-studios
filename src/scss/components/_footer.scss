@@ -19,6 +19,12 @@
     display: inline-block;
     margin-right: 15px;
     vertical-align: middle;
+    transition: box-shadow .3s;
+    border-radius: 50%;
+
+    &:hover {
+      box-shadow: 0 0 30px $color-brand-orange;
+    }
 
     &:last-of-type {
       margin-right: 0;

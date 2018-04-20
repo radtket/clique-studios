@@ -238,7 +238,7 @@ a {
     color: #ba6501; }
 
 hr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -586,7 +586,7 @@ blockquote {
 .client-square-grid {
   padding: 110px 0;
   z-index: 999;
-  background: yellow; }
+  background: #fff; }
 
 .client-square {
   float: left;
@@ -677,7 +677,11 @@ blockquote {
     width: 30px;
     display: inline-block;
     margin-right: 15px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    transition: box-shadow .3s;
+    border-radius: 50%; }
+    .footer__social a:hover {
+      box-shadow: 0 0 30px #f88601; }
     .footer__social a:last-of-type {
       margin-right: 0; }
     .footer__social a svg {
@@ -714,3 +718,60 @@ blockquote {
   .footer__contact li a {
     color: inherit;
     text-decoration: none; }
+
+.site-header {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  z-index: 999999999; }
+  .site-header::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .site-header:hover .site-header__nav {
+    transform: translate3d(0, 0, 0); }
+  .site-header figure {
+    height: 110px;
+    width: 110px;
+    background-color: #f88601;
+    display: inline-block;
+    float: left;
+    position: relative;
+    text-align: center;
+    z-index: 1; }
+    .site-header figure svg {
+      height: 100%;
+      width: 70px; }
+  .site-header__nav {
+    float: left;
+    line-height: 110px;
+    transition: 0.5s all cubic-bezier(0.165, 0.84, 0.44, 1); }
+    .site-header__nav a {
+      font-family: "Brandon Grotesque", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 1.3px;
+      margin-left: 60px;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+      position: relative;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease-in-out; }
+      .site-header__nav a:hover {
+        color: #f2f2f2;
+        border-color: #f88601; }
+  .site-header .btn-ghost {
+    background-color: rgba(33, 33, 33, 0.2);
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    position: fixed;
+    right: 40px;
+    text-decoration: none;
+    top: 37.5px; }

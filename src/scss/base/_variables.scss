@@ -39,7 +39,8 @@ $fw-brandon-black: 900;
 
 // Border
 $base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+$base-border-size: 2px;
+$base-border: $base-border-size solid $base-border-color;
 
 // Background Colors
 $viewport-background-color: #fff;
