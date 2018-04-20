@@ -1,3 +1,18 @@
+$client-bg-colors:
+transparent,
+#0077c0,
+#222226,
+#ea4031,
+#f98e38,
+#93c646,
+#ee5a2c,
+#155cac,
+#3bc7f3,
+#f13a33,
+#0093d7,
+#ffbe1b;
+
+
 .client-square-grid {
   padding: 110px 0;
   background: $color-white;
@@ -10,13 +25,40 @@
   margin-bottom: 2.35765%; // base-gutter
   position: relative;
   overflow: hidden;
+  filter: grayscale(0);
+  filter: saturate(1.5);
+  &::before{
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    transition: all .3s ease-in-out;
+    content:" ";
+    display: block;
+    z-index:1;
+    background-color: rgba(0,0,0,0.4);
+  }
 
+
+  @for $i from 1 to 13 {
+    // assign colors from $client-bg-colors list
+      &:nth-child(#{$i}) {
+        $color-from-list: nth($client-bg-colors, $i);
+
+        &:focus,
+        &:hover {
+          &::before {
+          background-color: transparentize($color-from-list, 0.5);
+          }
+        }
+      }
+    }
+
+
+  &:focus,
   &:hover {
     .client-square__bg {
-      filter: grayscale(0);
-      filter: saturate(1.5);
       transform: scale(1.1);
     }
+
 
     .client-square__nav {
       opacity: 1;
@@ -39,6 +81,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 
     svg {
       @include size(80%, 100%);
