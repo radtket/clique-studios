@@ -9,6 +9,8 @@ const changed = require('gulp-changed');
 const del = require('del');
 const sequence = require('run-sequence');
 const htmlMin = require('gulp-htmlmin');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
 
 gulp.task('reload', () => {
   browserSync.reload();
@@ -51,12 +53,26 @@ gulp.task('js', () =>
     .pipe(gulp.dest('src/js/dist/'))
 );
 
+gulp.task('js-compress', () =>
+  gulp
+    .src('src/js/dist/site.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('docs/js'))
+);
+
 gulp.task('img', () =>
   gulp
     .src('src/assets/**/*.{jpg,jpeg,png,gif}')
     .pipe(changed('docs/assets/'))
     .pipe(imagemin())
     .pipe(gulp.dest('docs/assets/'))
+);
+
+gulp.task('css', () =>
+  gulp
+    .src('src/css/*.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(gulp.dest('docs/css'))
 );
 
 gulp.task('html', () =>
@@ -75,7 +91,7 @@ gulp.task('html', () =>
 gulp.task('clean', () => del(['docs/']));
 
 gulp.task('build', () => {
-  sequence('clean', ['html', 'js', 'img']);
+  sequence('clean', ['html', 'js', 'img', 'sass', 'css', 'js-compress']);
 });
 
 gulp.task('default', ['serve']);

@@ -16,7 +16,7 @@
 
 
   figure {
-    @include size(110px);
+    @include size($header-logo-size);
     background-color: $color-brand-orange;
     display: inline-block;
     float: left;
@@ -25,13 +25,13 @@
 
     svg {
       height: 100%;
-      width: 110px - ($base-spacing * 2);
+      width: $header-logo-size - ($base-spacing * 2);
     }
   }
 
   &__nav {
     float: left;
-    line-height: 110px;
+    line-height: $header-logo-size;
     // transform: translateX(-100%);
     transform:  translate3d(-100%, 0, 0);
     transition: .5s all cubic-bezier(.165, .84, .44, 1);
@@ -42,13 +42,21 @@
       font-weight: $fw-brandon-bold;
       color: $color-white;
       letter-spacing: 1.3px;
-      margin-left: $base-spacing * 3;
+      margin-left: $base-spacing;
       text-decoration: none;
       text-transform: uppercase;
       padding-bottom: $base-spacing;
       position: relative;
       border-bottom: $base-border-size solid transparent;
       transition: all 0.3s ease-in-out;
+
+      @media (min-width: 997px) {
+        margin-left: $base-spacing * 2;
+      }
+
+      @media (min-width: 1200px) {
+        margin-left: $base-spacing * 3;
+      }
 
       &:hover {
         color: shade($color-white, 5%);
@@ -68,6 +76,6 @@
     position: fixed;
     right: $base-spacing * 2;
     text-decoration: none;
-    top: (110px - 35px) / 2;
+    top: ($header-logo-size - 35px) / 2;
   }
 }

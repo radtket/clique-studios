@@ -14,14 +14,13 @@ transparent,
 
 
 .client-square-grid {
-  padding: 110px 0;
+  padding: $header-logo-size 0;
   background: $color-white;
 }
 
 // Client Square
 .client-square {
-  @include span-columns(3);
-  @include omega(4n);
+  @include fill-parent;
   margin-bottom: 2.35765%; // base-gutter
   position: relative;
   overflow: hidden;
@@ -35,6 +34,21 @@ transparent,
     display: block;
     z-index:1;
     background-color: rgba(0,0,0,0.4);
+  }
+
+  @media all and (max-width: 649px) and (min-width: 400px) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  @media all and (max-width: 991px) and (min-width: 650px) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+
+  @media (min-width: 992px) {
+    @include span-columns(3);
+    @include omega(4n);
   }
 
 
@@ -102,6 +116,8 @@ transparent,
       line-height: 50px;
       text-align: center;
       transition: all .27s cubic-bezier(.300, .100, .580, 1.000);
+      margin-left: 2px;
+
 
       &:hover {
         background: rgba(#000, .75);

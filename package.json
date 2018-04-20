@@ -36,6 +36,10 @@
     "run-sequence": "^2.2.1"
   },
   "devDependencies": {
-    "gulp-autoprefixer": "^5.0.0"
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-minify": "^2.1.0",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
   }
 }
