@@ -17,6 +17,7 @@
     "bourbon": "^5.0.0",
     "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
     "eslint": "^4.19.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -26,8 +27,15 @@
     "eslint-plugin-react": "^7.7.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
+    "gulp-changed": "^3.2.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "run-sequence": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^5.0.0"
   }
 }
