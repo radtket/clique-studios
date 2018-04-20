@@ -252,6 +252,30 @@ hr {
 .text-center {
   text-align: center; }
 
+.fill-white {
+  fill: #fff; }
+
+.fill-facebook {
+  fill: #3b5998; }
+
+.fill-youtube {
+  fill: #c4302b; }
+
+.fill-twitter {
+  fill: #26a6d1; }
+
+.fill-linkedin {
+  fill: #0e76a8; }
+
+.fill-flickr_bg {
+  fill: #e4e7e7; }
+
+.fill-flickr_pink {
+  fill: #ff0084; }
+
+.fill-flickr_blue {
+  fill: #0063dc; }
+
 .site-header {
   z-index: 999999999; }
   .site-header figure {
@@ -707,6 +731,15 @@ blockquote {
     border-radius: 50%; }
     .footer__social a:hover {
       box-shadow: 0 0 30px #f88601; }
+      .footer__social a:hover .fill-facebook,
+      .footer__social a:hover .fill-youtube,
+      .footer__social a:hover .fill-twitter,
+      .footer__social a:hover .fill-linkedin,
+      .footer__social a:hover .fill-flickr_bg {
+        fill: #f88601; }
+      .footer__social a:hover .fill-flickr_pink,
+      .footer__social a:hover .fill-flickr_blue {
+        fill: #fff; }
     .footer__social a:last-of-type {
       margin-right: 0; }
     .footer__social a svg {

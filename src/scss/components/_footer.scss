@@ -23,6 +23,18 @@
 
     &:hover {
       box-shadow: 0 0 30px $color-brand-orange;
+      .fill-facebook,
+      .fill-youtube,
+      .fill-twitter,
+      .fill-linkedin,
+      .fill-flickr_bg {
+        fill: $color-brand-orange;
+      }
+
+      .fill-flickr_pink,
+      .fill-flickr_blue {
+        fill: $color-white;
+      }
     }
 
     &:last-of-type {
