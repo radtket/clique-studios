@@ -1,7 +1,8 @@
 .site-header {
 	z-index: 999999999;
+
 	figure {
-    z-index: 1;
+		z-index: 1;
 	}
 }
 
@@ -30,7 +31,7 @@
 }
 
 .scroll-down-icon {
-  z-index: 2;
+	z-index: 2;
 }
 
 .hero-scroll-down {
@@ -40,12 +41,13 @@
 }
 
 .scroll-down {
-  &:before {
-    z-index: 1;
-  }
+	&::before {
+		z-index: 1;
+	}
 }
 
 .btn {
+
 	&::before,
 	&::after {
 		z-index: -1;

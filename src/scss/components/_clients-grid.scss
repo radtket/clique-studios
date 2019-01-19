@@ -1,5 +1,4 @@
-$client-bg-colors:
-transparent,
+$client-bg-colors: transparent,
 #0077c0,
 #222226,
 #ea4031,
@@ -14,123 +13,125 @@ transparent,
 
 
 .client-square-grid {
-  padding: $header-logo-size 0;
-  background: $color-white;
+	background: $color-white;
+	padding: $header-logo-size 0;
 }
 
 // Client Square
 .client-square {
-  @include fill-parent;
-  margin-bottom: 2.35765%; // base-gutter
-  position: relative;
-  overflow: hidden;
-  filter: grayscale(0);
-  filter: saturate(1.5);
-  &::before{
-    @include position(absolute, 0 null null 0);
-    @include size(100%);
-    transition: all .3s ease-in-out;
-    content:" ";
-    display: block;
-    z-index:1;
-    background-color: rgba(0,0,0,0.4);
-  }
+	@include fill-parent;
+	// filter: grayscale(0);
+	filter: saturate(1.5);
+	margin-bottom: 2.35765%; // base-gutter
+	overflow: hidden;
+	position: relative;
 
-  @media all and (max-width: 649px) and (min-width: 400px) {
-    @include span-columns(6);
-    @include omega(2n);
-  }
+	&::before {
+		@include position(absolute, 0 null null 0);
+		@include size(100%);
+		background-color: rgba($color-black, 0.4);
+		content: " ";
+		display: block;
+		transition: all .3s ease-in-out;
+		z-index: 1;
+	}
 
-  @media all and (max-width: 991px) and (min-width: 650px) {
-    @include span-columns(4);
-    @include omega(3n);
-  }
+	@media all and (max-width: 649px) and (min-width: 400px) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
 
-  @media (min-width: 992px) {
-    @include span-columns(3);
-    @include omega(4n);
-  }
+	@media all and (max-width: 991px) and (min-width: 650px) {
+		@include span-columns(4);
+		@include omega(3n);
+	}
 
-
-  @for $i from 1 to 13 {
-    // assign colors from $client-bg-colors list
-      &:nth-child(#{$i}) {
-        $color-from-list: nth($client-bg-colors, $i);
-
-        &:focus,
-        &:hover {
-          &::before {
-          background-color: transparentize($color-from-list, 0.5);
-          }
-        }
-      }
-    }
+	@media (min-width: 992px) {
+		@include span-columns(3);
+		@include omega(4n);
+	}
 
 
-  &:focus,
-  &:hover {
-    .client-square__bg {
-      transform: scale(1.1);
-    }
+	@for $i from 1 to 13 {
+
+		// assign colors from $client-bg-colors list
+		&:nth-child(#{$i}) {
+			$color-from-list: nth($client-bg-colors, $i);
+
+			&:focus,
+			&:hover {
+				&::before {
+					background-color: transparentize($color-from-list, 0.5);
+				}
+			}
+		}
+	}
 
 
-    .client-square__nav {
-      opacity: 1;
-      transform: translateY(-50px);
-    }
-  }
-
-  &__bg {
-    @include size(100%);
-    filter: grayscale(100%);
-    filter: saturate(0);
-    max-width: 100%;
-    transform: scale(1.2);
-    transition: all .3s ease-in-out;
-  }
-
-  &__inner {
-    @include size(100%);
-    @include position(absolute, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-
-    svg {
-      @include size(80%, 100%);
-      max-height: 100px;
-      max-width: 100%;
-      fill: $color-white !important;
-    }
-  }
-
-  &__nav {
-    @include position(absolute, null 0 -50px null);
-    transition: all .27s cubic-bezier(.300, .100, .580, 1.000);
-
-    &--item {
-      @include size(50px);
-      background: rgba(#000, .5);
-      display: inline-block;
-      line-height: 50px;
-      text-align: center;
-      transition: all .27s cubic-bezier(.300, .100, .580, 1.000);
-      margin-left: 2px;
+	&:focus,
+	&:hover {
+		.client-square__bg {
+			transform: scale(1.1);
+		}
 
 
-      &:hover {
-        background: rgba(#000, .75);
+		.client-square__nav {
+			opacity: 1;
+			transform: translateY(-50px);
+		}
+	}
 
-        svg {
-          fill: $color-brand-orange;
-        }
-      }
+	&__bg {
+		@include size(100%);
+		// filter: grayscale(100%);
+		filter: saturate(0);
+		max-width: 100%;
+		transform: scale(1.2);
+		transition: all .3s ease-in-out;
+	}
 
-      svg {
-        fill: $color-white;
-        vertical-align: middle;
-      }
-    }
-  }
+	&__inner {
+		@include size(100%);
+		@include position(absolute, 0);
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		z-index: 2;
+
+		svg {
+			@include size(80%, 100%);
+			fill: $color-white !important;
+			max-height: 100px;
+			max-width: 100%;
+		}
+	}
+
+	&__nav {
+		@include position(absolute, null 0 -50px null);
+		transition: all .27s cubic-bezier(.300, .100, .580, 1);
+
+		&--item {
+			@include size(50px);
+			background: rgba($color-black, .5);
+			display: inline-block;
+			line-height: 50px;
+			margin-left: 2px;
+			text-align: center;
+			transition: all .27s cubic-bezier(.300, .100, .580, 1);
+
+
+			&:hover {
+				background: rgba($color-black, .75);
+
+				svg {
+					fill: $color-brand-orange;
+				}
+			}
+
+			svg {
+				fill: $color-white;
+				vertical-align: middle;
+			}
+		}
+	}
 }

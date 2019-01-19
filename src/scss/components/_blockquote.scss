@@ -1,12 +1,12 @@
 .blockquote-sec {
 	@include padding(155px null 135px);
-	background-image: url('../assets/blockquote-bg.jpg');
+	background-image: url("../img/blockquote-bg.jpg");
 	background-position: unset;
 }
 
 blockquote {
 	border-left: $base-border-size solid $color-brand-orange;
-	color: #282828;
+	color: $color-brand-black;
 	font-family: $base-font-family;
 	font-size: 48px;
 	line-height: $heading-line-height;

@@ -28,7 +28,7 @@ $_button-background-color-hover: shade($action-color, 20%);
 
 	&:disabled {
 		cursor: not-allowed;
-		opacity: .5;
+		opacity: 0.5;
 
 		&:hover {
 			background-color: $_button-background-color;
@@ -37,31 +37,31 @@ $_button-background-color-hover: shade($action-color, 20%);
 }
 
 .btn {
+	appearance: none;
 	background: none;
-	border-radius: $base-border-radius;
 	border: 2px solid transparent;
+	border-radius: $base-border-radius;
 	color: transparent;
 	cursor: pointer;
 	display: inline-block;
 	font-family: $heading-font-family;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
 	font-weight: $fw-brandon-bold;
 	height: $base-spacing * 3;
 	letter-spacing: 4px;
+	line-height: 58px;
 	margin: 0;
 	min-width: 230px;
+	position: relative;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: all 0.3s;
-	-webkit-font-smoothing: antialiased;
-	appearance: none;
-	font-size: 16px;
-	line-height: 58px;
 	transition-timing-function: ease;
 	user-select: none;
 	vertical-align: middle;
 	white-space: nowrap;
-	position: relative;
 
 	&::after {
 		transition: all 0.3s;
@@ -72,7 +72,7 @@ $_button-background-color-hover: shade($action-color, 20%);
 		@include position(absolute, 0 null null 0);
 		@include size(100%, 0);
 		background: $color-white;
-		content: '';
+		content: "";
 		position: absolute;
 	}
 
@@ -85,8 +85,8 @@ $_button-background-color-hover: shade($action-color, 20%);
 	}
 
 	&-white {
-		color: $color-white;
 		border-color: $color-white;
+		color: $color-white;
 
 		&::after {
 			background-color: $color-white;
@@ -98,8 +98,8 @@ $_button-background-color-hover: shade($action-color, 20%);
 	}
 
 	&-orange {
-		color: $color-brand-orange;
 		border-color: $color-brand-orange;
+		color: $color-brand-orange;
 
 		&::after {
 			background-color: $color-brand-orange;
@@ -110,7 +110,6 @@ $_button-background-color-hover: shade($action-color, 20%);
 		}
 	}
 }
-
 
 // Button Group
 

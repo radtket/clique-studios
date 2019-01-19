@@ -1,20 +1,6 @@
-@import '../../node_modules/bourbon/core/bourbon';
-@import '../../node_modules/bourbon-neat/app/assets/stylesheets/neat';
-@import 'font-face';
-@import 'base/variables';
+@import "../../node_modules/bourbon/core/bourbon";
+@import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
+@import "font-face";
 
-@import 'base/buttons';
-@import 'base/layout';
-@import 'base/lists';
-@import 'base/media';
-@import 'base/typography';
-@import 'base/utils';
-@import 'base/z-index';
-
-// Modules
-@import 'components/hero';
-@import 'components/clients-parallax';
-@import 'components/blockquote';
-@import 'components/clients-grid';
-@import 'components/footer';
-@import 'components/nav';
+@import "base/**/*";
+@import "components/**/*";
