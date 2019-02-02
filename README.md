@@ -1,6 +1,6 @@
 # Clique Studios
 
-A code challenge converting a psd to a landing page for Clique Studios
+A coding challenge converting a PSD to a landing page for Clique Studios
 
 **Live demo:** [https://radtket.github.io/clique-studios/](https://radtket.github.io/clique-studios/)
 
